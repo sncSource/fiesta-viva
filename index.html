@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiesta Viva | Organización de eventos en Lima</title>
+  <meta name="description" content="Organizamos cumpleaños, bodas, quinceañeros, baby showers y eventos corporativos en Lima. Cotiza tu evento en línea en menos de un minuto.">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado">
+    <div class="contenedor encabezado__fila">
+      <a href="#inicio" class="logo">
+        <img src="img/logo-fiesta-viva.png" alt="Fiesta Viva, organización de eventos" width="240" height="70">
+      </a>
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-boton__barra" aria-hidden="true"></span>
+        <span class="visualmente-oculto">Abrir menú</span>
+      </button>
+      <nav aria-label="Navegación principal">
+        <ul id="menu-principal" class="menu">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#paquetes">Paquetes</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#cotizador" class="boton boton--pequeno">Cotizar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+      <picture>
+        <source type="image/webp" srcset="img/hero-fiesta-800.webp 800w, img/hero-fiesta.webp 1600w" sizes="100vw">
+        <img
+          class="hero__imagen"
+          src="img/hero-fiesta.jpg"
+          srcset="img/hero-fiesta-800.jpg 800w, img/hero-fiesta.jpg 1600w"
+          sizes="100vw"
+          width="1600"
+          height="900"
+          alt=""
+          fetchpriority="high"
+        >
+      </picture>
+      <div class="contenedor hero__contenido">
+        <p class="hero__etiqueta">Organización integral de eventos</p>
+        <h1>Tu celebración, sin estrés y con mucha vida</h1>
+        <p class="hero__texto">Planificamos, decoramos y coordinamos cada detalle de tu evento en Lima, desde 20 hasta 500 invitados.</p>
+        <div class="hero__acciones">
+          <a href="#cotizador" class="boton">Cotiza tu evento</a>
+          <a href="#servicios" class="boton boton--claro">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <h2>Nuestros servicios</h2>
+        <p class="seccion__intro">Un equipo dedicado para cada tipo de celebración.</p>
+        <div class="tarjetas">
+          <article class="tarjeta">
+            <picture>
+              <source type="image/webp" srcset="img/servicio-cumpleanos.webp">
+              <img src="img/servicio-cumpleanos.jpg" width="800" height="600" loading="lazy" alt="Torta de tres pisos con velas, globos y regalos sobre una mesa decorada">
+            </picture>
+            <div class="tarjeta__cuerpo">
+              <h3>Cumpleaños</h3>
+              <p>Temáticas personalizadas, torta, decoración con globos y animación para todas las edades.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <picture>
+              <source type="image/webp" srcset="img/servicio-bodas.webp">
+              <img src="img/servicio-bodas.jpg" width="800" height="600" loading="lazy" alt="Arco de flores con dos anillos dorados y copas de brindis">
+            </picture>
+            <div class="tarjeta__cuerpo">
+              <h3>Bodas</h3>
+              <p>Ceremonia y recepción: ambientación floral, banquete, música y coordinación del gran día.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <picture>
+              <source type="image/webp" srcset="img/servicio-quinceanero.webp">
+              <img src="img/servicio-quinceanero.jpg" width="800" height="600" loading="lazy" alt="Número 15 dorado con una tiara y globos de colores">
+            </picture>
+            <div class="tarjeta__cuerpo">
+              <h3>Quinceañeros</h3>
+              <p>Decoración de impacto, luces, protocolo, pista de baile y coordinación de cada sorpresa.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <picture>
+              <source type="image/webp" srcset="img/servicio-baby-shower.webp">
+              <img src="img/servicio-baby-shower.jpg" width="800" height="600" loading="lazy" alt="Ropita de bebé colgada en un tendedero, globos pastel y un coche de bebé">
+            </picture>
+            <div class="tarjeta__cuerpo">
+              <h3>Baby showers</h3>
+              <p>Ambientación en tonos pastel, juegos dinámicos, mesa de bocaditos y detalles para tus invitados.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <picture>
+              <source type="image/webp" srcset="img/servicio-corporativo.webp">
+              <img src="img/servicio-corporativo.jpg" width="800" height="600" loading="lazy" alt="Escenario con pantalla, podio y mesas redondas para un evento empresarial">
+            </picture>
+            <div class="tarjeta__cuerpo">
+              <h3>Eventos corporativos</h3>
+              <p>Conferencias, lanzamientos e integraciones con montaje técnico, catering y logística puntual.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <picture>
+              <source type="image/webp" srcset="img/servicio-infantil.webp">
+              <img src="img/servicio-infantil.jpg" width="800" height="600" loading="lazy" alt="Carpa de circo con piñata de estrella, globos y regalos sobre el césped">
+            </picture>
+            <div class="tarjeta__cuerpo">
+              <h3>Fiestas infantiles</h3>
+              <p>Decoración temática, piñata, juegos recreativos y animación segura para que los niños disfruten.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PAQUETES ===== -->
+    <section id="paquetes" class="seccion seccion--suave">
+      <div class="contenedor">
+        <h2>Paquetes por invitado</h2>
+        <p class="seccion__intro">Precios referenciales por persona, sin IGV.</p>
+        <div class="paquetes">
+          <article class="paquete">
+            <h3>Esencial</h3>
+            <p class="paquete__precio">S/ 45 <span>por invitado</span></p>
+            <ul>
+              <li>Local y mobiliario básico</li>
+              <li>Decoración temática</li>
+              <li>Bocaditos y bebidas</li>
+            </ul>
+          </article>
+
+          <article class="paquete paquete--destacado">
+            <p class="paquete__cinta">Más elegido</p>
+            <h3>Clásico</h3>
+            <p class="paquete__precio">S/ 70 <span>por invitado</span></p>
+            <ul>
+              <li>Todo lo del paquete Esencial</li>
+              <li>Cena o almuerzo de dos tiempos</li>
+              <li>Torta y coordinadora de evento</li>
+            </ul>
+          </article>
+
+          <article class="paquete">
+            <h3>Premium</h3>
+            <p class="paquete__precio">S/ 110 <span>por invitado</span></p>
+            <ul>
+              <li>Todo lo del paquete Clásico</li>
+              <li>Banquete de tres tiempos y barra libre</li>
+              <li>Decoración floral e iluminación</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section id="galeria" class="seccion">
+      <div class="contenedor">
+        <h2>Galería de ambientaciones</h2>
+        <div class="galeria">
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/galeria-mesa-postres.webp">
+              <img src="img/galeria-mesa-postres.jpg" width="800" height="600" loading="lazy" alt="Mesa de postres con torta, cupcakes y dulces bajo una guirnalda de banderines">
+            </picture>
+            <figcaption>Mesa de postres</figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/galeria-arco-globos.webp">
+              <img src="img/galeria-arco-globos.jpg" width="800" height="600" loading="lazy" alt="Arco de globos de colores sobre un panel para fotos">
+            </picture>
+            <figcaption>Arco de globos</figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/galeria-pista-baile.webp">
+              <img src="img/galeria-pista-baile.jpg" width="800" height="600" loading="lazy" alt="Pista de baile iluminada con bola de espejos y luces de colores">
+            </picture>
+            <figcaption>Pista de baile</figcaption>
+          </figure>
+
+          <figure>
+            <picture>
+              <source type="image/webp" srcset="img/galeria-brindis.webp">
+              <img src="img/galeria-brindis.jpg" width="800" height="600" loading="lazy" alt="Dos copas brindando entre confeti y luces cálidas">
+            </picture>
+            <figcaption>Brindis</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COTIZADOR ===== -->
+    <section id="cotizador" class="seccion seccion--suave">
+      <div class="contenedor cotizador">
+        <div>
+          <h2>Cotiza tu evento</h2>
+          <p class="seccion__intro">Completa el formulario y obtén un precio referencial al instante.</p>
+
+          <form id="form-cotizacion" class="formulario" novalidate>
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" aria-describedby="error-nombre">
+              <p class="campo__error" id="error-nombre" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="error-correo">
+              <p class="campo__error" id="error-correo" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+              <label for="tipo">Tipo de evento</label>
+              <select id="tipo" name="tipo" aria-describedby="error-tipo">
+                <option value="">Selecciona una opción</option>
+                <option value="cumpleanos">Cumpleaños</option>
+                <option value="boda">Boda</option>
+                <option value="quinceanero">Quinceañero</option>
+                <option value="babyshower">Baby shower</option>
+                <option value="corporativo">Evento corporativo</option>
+                <option value="infantil">Fiesta infantil</option>
+              </select>
+              <p class="campo__error" id="error-tipo" aria-live="polite"></p>
+            </div>
+
+            <div class="campo-doble">
+              <div class="campo">
+                <label for="fecha">Fecha del evento</label>
+                <input type="date" id="fecha" name="fecha" aria-describedby="error-fecha">
+                <p class="campo__error" id="error-fecha" aria-live="polite"></p>
+              </div>
+
+              <div class="campo">
+                <label for="invitados">N.° de invitados</label>
+                <input type="number" id="invitados" name="invitados" min="20" max="500" step="1" inputmode="numeric" aria-describedby="error-invitados">
+                <p class="campo__error" id="error-invitados" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <fieldset class="campo">
+              <legend>Paquete</legend>
+              <label class="opcion"><input type="radio" name="paquete" value="esencial"> Esencial (S/ 45)</label>
+              <label class="opcion"><input type="radio" name="paquete" value="clasico" checked> Clásico (S/ 70)</label>
+              <label class="opcion"><input type="radio" name="paquete" value="premium"> Premium (S/ 110)</label>
+            </fieldset>
+
+            <fieldset class="campo">
+              <legend>Servicios adicionales</legend>
+              <label class="opcion"><input type="checkbox" name="extras" value="dj"> DJ y sonido (S/ 900)</label>
+              <label class="opcion"><input type="checkbox" name="extras" value="foto"> Fotografía y video (S/ 1 200)</label>
+              <label class="opcion"><input type="checkbox" name="extras" value="horaLoca"> Hora loca (S/ 650)</label>
+              <label class="opcion"><input type="checkbox" name="extras" value="animacion"> Animación infantil (S/ 500)</label>
+              <label class="opcion"><input type="checkbox" name="extras" value="postres"> Mesa de postres (S/ 750)</label>
+            </fieldset>
+
+            <button type="submit" class="boton boton--ancho">Calcular cotización</button>
+          </form>
+        </div>
+
+        <aside class="resumen" aria-live="polite">
+          <h3>Resumen de tu cotización</h3>
+          <div id="resultado">
+            <p class="resumen__vacio">Completa el formulario para ver el detalle y el precio estimado.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <div>
+        <img src="img/logo-fiesta-viva.png" alt="Fiesta Viva" width="180" height="53" loading="lazy">
+        <p>Av. Primavera 1450, Santiago de Surco, Lima<br>contacto@fiestaviva.example · (01) 000-0000</p>
+      </div>
+      <div class="pie__ia">
+        <h2>Transparencia en el uso de IA</h2>
+        <p>Los textos de este sitio se redactaron con apoyo de asistentes de IA y fueron revisados por el equipo. Las imágenes son ilustraciones de referencia, no fotografías de eventos reales.</p>
+      </div>
+    </div>
+    <p class="pie__legal">&copy; <span id="anio">2026</span> Fiesta Viva Eventos S.A.C. Empresa ficticia creada con fines académicos.</p>
+  </footer>
+
+  <script src="js/cotizador.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

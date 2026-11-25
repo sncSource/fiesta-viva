@@ -1,0 +1,648 @@
+/* =========================================
+   Fiesta Viva - estilos.css (mobile-first)
+   ========================================= */
+
+/* 1. Variables y base */
+:root {
+  --morado: #5B2A86;
+  --magenta: #C2185B;
+  --magenta-claro: #E6337A;
+  --turquesa: #1FB5AC;
+  --amarillo: #FFC93C;
+  --crema: #FFF6EC;
+  --texto: #282238;
+  --texto-suave: #5F5670;
+  --blanco: #ffffff;
+  --radio: 16px;
+  --sombra: 0 10px 30px rgba(43, 34, 56, 0.12);
+  --fuente: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  color: var(--texto);
+  line-height: 1.6;
+  background: var(--blanco);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.6em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  color: var(--morado);
+}
+
+a {
+  color: var(--magenta);
+}
+
+:focus-visible {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 3px;
+}
+
+.contenedor {
+  width: min(1120px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--morado);
+  color: var(--blanco);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  z-index: 100;
+}
+
+.saltar:focus {
+  top: 1rem;
+}
+
+/* 2. Botones */
+.boton {
+  display: inline-block;
+  min-height: 48px;
+  padding: 0.8rem 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--magenta);
+  color: var(--blanco);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.boton:hover {
+  background: var(--morado);
+  transform: translateY(-2px);
+}
+
+.boton--claro {
+  background: var(--blanco);
+  color: var(--morado);
+}
+
+.boton--claro:hover {
+  background: var(--amarillo);
+  color: var(--texto);
+}
+
+.boton--pequeno {
+  min-height: 40px;
+  padding: 0.5rem 1.2rem;
+}
+
+.boton--ancho {
+  width: 100%;
+}
+
+/* 3. Encabezado y menú */
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--blanco);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.encabezado__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.logo img {
+  width: 180px;
+}
+
+.menu-boton {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.menu-boton__barra,
+.menu-boton__barra::before,
+.menu-boton__barra::after {
+  display: block;
+  width: 26px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--morado);
+  position: relative;
+  content: "";
+}
+
+.menu-boton__barra::before {
+  position: absolute;
+  top: -8px;
+  left: 0;
+}
+
+.menu-boton__barra::after {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 72px;
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+}
+
+.menu.abierto {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.menu a:not(.boton) {
+  display: block;
+  padding: 0.6rem 0.4rem;
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:not(.boton):hover {
+  color: var(--magenta);
+}
+
+/* 4. Hero */
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 78vh;
+  color: var(--blanco);
+  overflow: hidden;
+}
+
+.hero picture,
+.hero__imagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 8, 48, 0.88) 0%,
+    rgba(26, 8, 48, 0.6) 55%,
+    rgba(26, 8, 48, 0.1) 100%
+  );
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  padding-block: 4rem;
+  max-width: 640px;
+  margin-left: max(1rem, (100% - 1120px) / 2);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+}
+
+.hero__etiqueta {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  background: var(--amarillo);
+  color: var(--texto);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.hero__texto {
+  font-size: 1.15rem;
+  margin-bottom: 1.6rem;
+}
+
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* 5. Secciones, tarjetas y paquetes */
+.seccion {
+  padding-block: 4rem;
+}
+
+.seccion--suave {
+  background: var(--crema);
+}
+
+.seccion__intro {
+  color: var(--texto-suave);
+  margin-top: -0.4rem;
+  margin-bottom: 2rem;
+}
+
+.tarjetas {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.25s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+}
+
+.tarjeta img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+}
+
+.tarjeta__cuerpo {
+  padding: 1.2rem 1.4rem 1.6rem;
+}
+
+.tarjeta h3 {
+  color: var(--magenta);
+}
+
+.tarjeta p {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.paquetes {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.paquete {
+  position: relative;
+  background: var(--blanco);
+  border-radius: var(--radio);
+  padding: 2rem 1.6rem;
+  box-shadow: var(--sombra);
+  border-top: 6px solid var(--turquesa);
+}
+
+.paquete--destacado {
+  border-top-color: var(--magenta);
+}
+
+.paquete__cinta {
+  position: absolute;
+  top: 14px;
+  right: 1.2rem;
+  margin: 0;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: var(--magenta);
+  color: var(--blanco);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.paquete__precio {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--morado);
+  margin: 0 0 1rem;
+}
+
+.paquete__precio span {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+}
+
+.paquete ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+/* 6. Galería */
+.galeria {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.galeria figure {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+.galeria img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.4s;
+}
+
+.galeria figure:hover img {
+  transform: scale(1.05);
+}
+
+.galeria figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.6rem 0.9rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+/* 7. Cotizador */
+.cotizador {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.formulario {
+  display: grid;
+  gap: 1rem;
+  background: var(--blanco);
+  padding: 1.6rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.campo {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.campo label,
+.campo legend {
+  font-weight: 600;
+}
+
+.campo input:not([type="radio"]):not([type="checkbox"]),
+.campo select {
+  min-height: 48px;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+  color: var(--texto);
+  border: 2px solid #D9D1E3;
+  border-radius: 10px;
+  background: var(--blanco);
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--turquesa);
+}
+
+.formulario .campo :is(input, select)[aria-invalid="true"] {
+  border-color: #B3261E;
+  background: #FFF5F5;
+}
+
+.campo__error {
+  margin: 0;
+  min-height: 1.2em;
+  color: #B3261E;
+  font-size: 0.9rem;
+}
+
+.campo-doble {
+  display: grid;
+  gap: 1rem;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 40px;
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+
+.opcion input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--magenta);
+}
+
+.resumen {
+  background: var(--morado);
+  color: var(--blanco);
+  border-radius: var(--radio);
+  padding: 1.6rem;
+  box-shadow: var(--sombra);
+}
+
+.resumen h3 {
+  color: var(--amarillo);
+}
+
+.resumen__vacio {
+  opacity: 0.85;
+}
+
+.resumen__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 0.8rem;
+}
+
+.resumen__tabla td {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.resumen__tabla td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.resumen__total {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--amarillo);
+  margin: 0.6rem 0 0;
+}
+
+.resumen__nota {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* 8. Pie de página */
+.pie {
+  background: #24123A;
+  color: #EDE6F5;
+  padding-top: 3rem;
+}
+
+.pie__fila {
+  display: grid;
+  gap: 2rem;
+}
+
+.pie h2 {
+  font-size: 1.1rem;
+  color: var(--amarillo);
+}
+
+.pie__ia {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radio);
+  padding: 1.2rem;
+}
+
+.pie__legal {
+  text-align: center;
+  margin: 2rem 0 0;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+}
+
+/* 9. Tablet: 768 px */
+@media (min-width: 768px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .campo-doble {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pie__fila {
+    grid-template-columns: 1fr 1.4fr;
+  }
+}
+
+/* 10. Escritorio: 1024 px */
+@media (min-width: 1024px) {
+  .menu-boton {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    position: static;
+    gap: 1.6rem;
+    align-items: center;
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .logo img {
+    width: 240px;
+  }
+
+  .tarjetas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .paquetes {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+
+  .paquete--destacado {
+    transform: scale(1.04);
+  }
+
+  .galeria {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cotizador {
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .resumen {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+/* 11. Movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
