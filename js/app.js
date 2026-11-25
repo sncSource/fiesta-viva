@@ -19,13 +19,36 @@ menu.addEventListener("click", (evento) => {
   }
 });
 
-// 2. Lectura del formulario
+// 2. Lectura del formulario y contador de notas
 const formulario = document.getElementById("form-cotizacion");
 const resultado = document.getElementById("resultado");
+const campoNotas = document.getElementById("notas");
+const contadorNotas = document.getElementById("contador-notas");
+const contadorNotasValor = document.getElementById("contador-notas-valor");
 const CAMPOS = ["nombre", "correo", "tipo", "fecha", "invitados"];
+const MAX_NOTAS = 300;
+
+function actualizarContadorNotas() {
+  if (campoNotas.value.length > MAX_NOTAS) {
+    campoNotas.value = campoNotas.value.slice(0, MAX_NOTAS);
+  }
+  const longitud = campoNotas.value.length;
+  contadorNotasValor.textContent = `${longitud}/${MAX_NOTAS}`;
+  contadorNotas.classList.toggle("campo__contador--limite", longitud >= MAX_NOTAS);
+}
+
+campoNotas.addEventListener("input", actualizarContadorNotas);
+formulario.addEventListener("reset", () => {
+  requestAnimationFrame(actualizarContadorNotas);
+});
+actualizarContadorNotas();
 
 function leerFormulario() {
   const datos = new FormData(formulario);
+  const notas = String(datos.get("notas") ?? "")
+    .replace(/\r\n/g, "\n")
+    .slice(0, MAX_NOTAS);
+
   return {
     nombre: datos.get("nombre"),
     correo: datos.get("correo"),
@@ -34,6 +57,7 @@ function leerFormulario() {
     invitados: datos.get("invitados"),
     paquete: datos.get("paquete"),
     extras: datos.getAll("extras"),
+    notas,
   };
 }
 
@@ -82,13 +106,26 @@ function mostrarResumen(datos, cotizacion) {
   tabla.append(cuerpo);
 
   const total = crear("p", "resumen__total", "Total: " + formatearSoles(cotizacion.total));
+  const elementos = [saludo, tabla, total];
+
+  const notasLimpias = String(datos.notas ?? "").trim();
+  if (notasLimpias) {
+    const bloqueNotas = crear("div", "resumen__notas");
+    bloqueNotas.append(
+      crear("h4", "resumen__notas-titulo", "Tus notas"),
+      crear("p", "resumen__notas-texto", notasLimpias)
+    );
+    elementos.push(bloqueNotas);
+  }
+
   const nota = crear(
     "p",
     "resumen__nota",
     "Precio referencial. Te enviaremos la propuesta final a " + datos.correo.trim() + "."
   );
+  elementos.push(nota);
 
-  resultado.replaceChildren(saludo, tabla, total, nota);
+  resultado.replaceChildren(...elementos);
 }
 
 // 5. Envío del formulario

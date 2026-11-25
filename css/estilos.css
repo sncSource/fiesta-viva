@@ -452,7 +452,8 @@ a {
 }
 
 .campo input:not([type="radio"]):not([type="checkbox"]),
-.campo select {
+.campo select,
+.campo textarea {
   min-height: 48px;
   padding: 0.6rem 0.8rem;
   font: inherit;
@@ -462,14 +463,34 @@ a {
   background: var(--blanco);
 }
 
+.campo textarea {
+  min-height: 112px;
+  resize: vertical;
+  width: 100%;
+}
+
 .campo input:focus,
-.campo select:focus {
+.campo select:focus,
+.campo textarea:focus {
   border-color: var(--turquesa);
 }
 
-.formulario .campo :is(input, select)[aria-invalid="true"] {
+.formulario .campo :is(input, select, textarea)[aria-invalid="true"] {
   border-color: #B3261E;
   background: #FFF5F5;
+}
+
+.campo__contador {
+  margin: 0;
+  text-align: right;
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.campo__contador--limite {
+  color: var(--magenta);
+  font-weight: 700;
 }
 
 .campo__error {
@@ -536,6 +557,26 @@ a {
   font-weight: 800;
   color: var(--amarillo);
   margin: 0.6rem 0 0;
+}
+
+.resumen__notas {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 4px solid var(--amarillo);
+}
+
+.resumen__notas-titulo {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--amarillo);
+}
+
+.resumen__notas-texto {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .resumen__nota {

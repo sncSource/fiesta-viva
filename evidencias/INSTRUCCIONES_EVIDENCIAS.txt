@@ -1,0 +1,5 @@
+Coloca aquí las capturas de pantalla del Reto 5 antes de comprimir tu entrega final:
+1. reto05_caso1_xss.png         -> Resumen con <img src=x onerror=alert(1)> mostrado como texto literal.
+2. reto05_caso4_multilinea.png  -> Resumen con 'Tema: Frozen' y 'Sin maní' en dos líneas.
+3. reto05_consola_sin_xss.png   -> Consola de DevTools comprobando 0 elementos img, script y svg en #resultado.
+(Puedes eliminar este archivo de texto una vez agregues tus capturas.)
